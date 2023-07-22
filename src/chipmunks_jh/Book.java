@@ -11,17 +11,18 @@ import java.util.Scanner;
  * @author Akila
  */
 public class Book {
-   protected int ISBN;
-   protected String Title;
+
+    protected int ISBN;
+    protected String Title;
 
     public Book(int ISBN, String Title) {
         this.ISBN = ISBN;
         this.Title = Title;
     }
-   
-   public Book(){
-       
-   }
+
+    public Book() {
+
+    }
 
     public int getISBN() {
         return ISBN;
@@ -38,75 +39,69 @@ public class Book {
     public void setTitle(String Title) {
         this.Title = Title;
     }
-   
-    
-   
-    public void addBook(){
+
+    public void addBook() {
         System.out.println("Adding a new Book");
         System.out.println("Enter the ISBN");
-        Scanner scan=new  Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         try {
             setISBN(scan.nextInt());
             if (checkIsbn(getISBN())) {
                 System.out.println("Enter Title");
-                Validations v1=new Validations();
+                Validations v1 = new Validations();
                 setTitle(scan.nextLine());
                 if (!v1.checkStringvalidation(getTitle())) {
                     setTitle("");
+                } else {
+                    Category c1 = new Category();
+                    c1.setCategoryName(scan.nextLine());
+                    if (!v1.checkStringvalidation(c1.getCategoryName())) {
+                        c1.setCategoryName("");
+                    }
+
+                    if (c1.checkCategory(c1.getCategoryName())) {
+
+                    } else {
+                        System.out.println("current Category is not in the category list");
+                    }
                 }
 
-                
-                Category c1=new Category();
-                c1.setCategoryName(scan.nextLine());
-                if (!v1.checkStringvalidation(c1.getCategoryName())) {
-                    c1.setCategoryName("");
-                }
-                
-                if (c1.checkCategory(c1.getCategoryName())) {
-                    
-                }else{
-                    System.out.println("current Category is not in the category list");
-                }
-
-            }else{
+            } else {
                 System.out.println("ISBN is already exisits");
             }
         } catch (Exception e) {
         }
-        
-        
+
     }
-    
-    
-    public void removeBook(){
+
+    public void removeBook() {
         System.out.println("Remove book a Book");
         System.out.println("Enter the ISBN");
-        Scanner scan=new  Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         try {
             System.out.println("Do you want to delete book or book copy(book copy-1, book-2)");
-            int checkvalue=scan.nextInt();
-            if (checkvalue==1) {
+            int checkvalue = scan.nextInt();
+            if (checkvalue == 1) {
                 deletecopy();
-            }else if (checkvalue==2) {
+            } else if (checkvalue == 2) {
                 deleteAllBooks();
-            }else{
+            } else {
                 System.out.println("invalid input");
             }
-{
-                
+            {
+
             }
-            
+
         } catch (Exception e) {
             System.out.println("invalid INput");
         }
 
     }
-   
-    
-    public void updateBook(){
+
+    public void updateBook() {
         System.out.println("Update a Book");
         System.out.println("Enter the ISBN");
-        Scanner scan=new  Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         try {
             setISBN(scan.nextInt());
             if (checkIsbn(getISBN())) {
@@ -114,88 +109,81 @@ public class Book {
                 System.out.println("Update a new Title");
                 setTitle(scan.nextLine());
                 System.out.println("Enter  new Category");
-                Category c1=new Category();
+                Category c1 = new Category();
                 c1.setCategoryName(scan.nextLine());
-                
+
                 if (c1.checkCategory(c1.getCategoryName())) {
                     System.out.println("Enter new Author");
-                    
-                    Author a1=new Author();
-                    String newautor=scan.nextLine();
+
+                    Author a1 = new Author();
+                    String newautor = scan.nextLine();
                     if (a1.checkAuthor(newautor)) {
                         //update functionality
-                    }else{
+                    } else {
                         System.out.println("author is not available in the database");
                     }
-                    
-                }else{
+
+                } else {
                     System.out.println("current Category is not in the category list");
                 }
 
-                
-
-            }else{
+            } else {
                 System.out.println("ISBN is already exisits");
             }
         } catch (Exception e) {
         }
     }
-    
-    public void ListAllBooks(){
+
+    public void ListAllBooks() {
         System.out.println("List all available Books");
-        if(checkBookList()){
-            
-        }else{
+        if (checkBookList()) {
+
+        } else {
             System.out.println("There are no books available to be listed!");
         }
     }
-    
-    
-    public void deleteAllBooks(){
-        
-        
+
+    public void deleteAllBooks() {
+
     }
-    
-    public void deletecopy(){
-        Scanner scan=new Scanner(System.in);
-        int isbn=scan.nextInt();
-            if (checkIsbn(isbn)) {
-                if (checkBookInReservation(isbn)) {
-                    
-                }else{
-                    System.out.println("Areu sure you want to delete(Y/N)");
-                    String values= scan.nextLine();
-                    try {
-                        if (values.equalsIgnoreCase("y")) {
-                            
-                        }else{
-                            System.out.println("invalid");
-                        }
-                    } catch (Exception e) {
+
+    public void deletecopy() {
+        Scanner scan = new Scanner(System.in);
+        int isbn = scan.nextInt();
+        if (checkIsbn(isbn)) {
+            if (checkBookInReservation(isbn)) {
+
+            } else {
+                System.out.println("Areu sure you want to delete(Y/N)");
+                String values = scan.nextLine();
+                try {
+                    if (values.equalsIgnoreCase("y")) {
+
+                    } else {
+                        System.out.println("invalid");
                     }
-                  
+                } catch (Exception e) {
                 }
 
-            }else{
-                System.out.println("ISBN is already exisits");
             }
+
+        } else {
+            System.out.println("ISBN is already exisits");
+        }
     }
-    
-    
-    private boolean checkIsbn(int isbn){
+
+    private boolean checkIsbn(int isbn) {
         return false;
-        
+
     }
-    
-    private boolean checkBookInReservation(int ISBM){
+
+    private boolean checkBookInReservation(int ISBM) {
         return true;
     }
-    
+
     //Check if book list exists (true if at least 1 record is available)
-    private boolean checkBookList(){
+    private boolean checkBookList() {
         return true;
     }
-   
-    
-    
+
 }
