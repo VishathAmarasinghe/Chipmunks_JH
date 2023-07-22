@@ -4,6 +4,8 @@
  */
 package chipmunks_jh;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Akila
@@ -40,6 +42,27 @@ public class Book {
     
    
     public void addBook(){
+        System.out.println("Adding a new Book");
+        System.out.println("Enter the ISBN");
+        Scanner scan=new  Scanner(System.in);
+        try {
+            int isbn=scan.nextInt();
+            if (checkIsbn(isbn)) {
+                String title=scan.nextLine();
+                String category=scan.nextLine();
+                Category c1=new Category();
+                if (c1.checkCategory(category)) {
+                    
+                }else{
+                    System.out.println("current Category is not in the category list");
+                }
+
+            }else{
+                System.out.println("ISBN is already exisits");
+            }
+        } catch (Exception e) {
+        }
+        
         
     }
     
@@ -54,6 +77,12 @@ public class Book {
     }
     
     public void viewAllBooks(){
+        
+    }
+    
+    
+    private boolean checkIsbn(int isbn){
+        return false;
         
     }
     

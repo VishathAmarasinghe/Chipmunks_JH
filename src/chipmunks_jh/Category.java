@@ -10,6 +10,10 @@ public class Category extends Book{
         this.categoryName = categoryName;
     }
 
+
+    public Category() {
+    }
+
     public Category(int categoryID, String categoryName) {
         this.categoryID = categoryID;
         this.categoryName = categoryName;
@@ -20,4 +24,10 @@ public class Category extends Book{
         System.out.println("Category name: "+categoryName);
     }
     
+
+    public boolean checkCategory(String Category){
+        return true;
+    }
+    
+
 }
