@@ -49,9 +49,18 @@ public class Book {
             setISBN(scan.nextInt());
             if (checkIsbn(getISBN())) {
                 System.out.println("Enter Title");
+                Validations v1=new Validations();
                 setTitle(scan.nextLine());
+                if (!v1.checkStringvalidation(getTitle())) {
+                    setTitle("");
+                }
+
+                
                 Category c1=new Category();
                 c1.setCategoryName(scan.nextLine());
+                if (!v1.checkStringvalidation(c1.getCategoryName())) {
+                    c1.setCategoryName("");
+                }
                 
                 if (c1.checkCategory(c1.getCategoryName())) {
                     
