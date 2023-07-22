@@ -32,7 +32,8 @@ public class DatabaseConnection {
     public void setCon(Connection con) {
         this.con = con;
     }
-    public void InsertBook(String ISBN,String Title,String CatID) throws SQLException{
+    public void InsertBook(String ISBN,String Title,String CatID) throws SQLException, ClassNotFoundException{
+        databaseConnection();
         String statement="INSERT INTO `Book`(`ISBN`, `TItle`, `CatID`) VALUES (?,?,?)";
         PreparedStatement ps= getCon().prepareStatement(statement);
         try {
@@ -50,7 +51,8 @@ public class DatabaseConnection {
         ps.executeUpdate();
         
     }
-    public void InsertCategory(String Category) throws SQLException{
+    public void InsertCategory(String Category) throws SQLException, ClassNotFoundException{
+        databaseConnection();
         String statement="INSERT INTO `Category`(`CatName`) VALUES (?)";
         PreparedStatement ps= getCon().prepareStatement(statement);
         try {
@@ -81,7 +83,8 @@ public class DatabaseConnection {
         closeDBcon();
         return 0;
     }
-    public void UpdatetBook(String ISBN,String Title,String CatID) throws SQLException{
+    public void UpdatetBook(String ISBN,String Title,String CatID) throws SQLException, ClassNotFoundException{
+        databaseConnection();
         String statement="UPDATE `Book` SET `ISBN`=?,`TItle`=?,`CatID`=? WHERE ISBN=ISBN;";
         PreparedStatement ps= getCon().prepareStatement(statement);
         try {
