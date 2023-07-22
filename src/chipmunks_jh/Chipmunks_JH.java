@@ -47,7 +47,7 @@ public class Chipmunks_JH {
                     r1.returnBook();
                     break;
                 case 6:
-                    b1.viewAllBooks();
+                    b1.ListAllBooks();
                     break;
                 case 7:
                     System.exit(mainfuncValue);
