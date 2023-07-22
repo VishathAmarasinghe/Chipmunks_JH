@@ -1,29 +1,56 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package chipmunks_jh;
 
 import java.util.Date;
+import java.util.Scanner;
 
-/**
- *
- * @author Akila
- */
 public class Reservation {
-    
-    int reservationID;
-    Date lendingDate;
-    Date returingDate;
-    
-    
-    
-    public void lendBook(){
-        
+
+    private int reservationID;
+
+    public void lendBook() {
+        System.out.println("Lending a Book");
+        System.out.println("Please enter the ISBN: ");
+        Scanner scan = new Scanner(System.in);
+        try {
+            int isbn = scan.nextInt();
+            if (checkIsbn(isbn)) {
+                if(checkBookInReservation(isbn)){
+                    
+                }else{
+                
+                }
+            }else{
+            
+            }
+        } catch (Exception e) {
+        }
     }
-    
-    public void returnBook(){
-        
+
+    public void returnBook() {
+        System.out.println("Returning a Book");
+        System.out.println("Please enter the ISBN: ");
+        Scanner scan = new Scanner(System.in);
+        try {
+            int isbn = scan.nextInt();
+            if (checkIsbn(isbn)) {
+                if(checkBookInReservation(isbn)){
+                    
+                }else{
+                
+                }
+            }else{
+            
+            }
+        } catch (Exception e) {
+        }
     }
-    
+
+    private boolean checkIsbn(int isbn) {
+        return false;
+
+    }
+
+    private boolean checkBookInReservation(int ISBM) {
+        return true;
+    }
 }
