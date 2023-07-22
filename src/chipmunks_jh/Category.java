@@ -1,5 +1,9 @@
 package chipmunks_jh;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Category extends Book {
 
     protected int categoryID;
@@ -42,12 +46,16 @@ public class Category extends Book {
 
     public boolean checkCategory(String Category) {
         DatabaseConnection d1=new DatabaseConnection();
-        int value=d1.FindCategory(Category);
-        if (value==0) {
-            return false;
-        }else{
-            return true;
+        boolean value = false;
+        try {
+            value = d1.FindCategory(Category);
+            System.out.println(value);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Category.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Category.class.getName()).log(Level.SEVERE, null, ex);
         }
+    return value;
         
         
     }

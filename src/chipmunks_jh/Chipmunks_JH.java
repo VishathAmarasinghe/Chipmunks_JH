@@ -13,6 +13,12 @@ public class Chipmunks_JH {
      */
     public static void main(String[] args) {
 
+        boolean ex=true;
+        while(ex){
+            
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
         System.out.println("Welcome To the library management System UOK");
         System.out.println("Please Choose an option");
         System.out.println("1.Add a new Book");
@@ -47,10 +53,11 @@ public class Chipmunks_JH {
                     r1.returnBook();
                     break;
                 case 6:
+       
                     b1.ListAllBooks();
                     break;
                 case 7:
-                    System.exit(mainfuncValue);
+                    ex=false;
                 default:
                     System.out.println("The number you entered is not in the range of functionality");
             }
@@ -60,5 +67,5 @@ public class Chipmunks_JH {
 
         // TODO code application logic here
     }
-
+    }
 }
