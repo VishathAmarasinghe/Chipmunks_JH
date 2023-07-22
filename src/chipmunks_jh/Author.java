@@ -4,6 +4,9 @@ public class Author {
     private int authorId;
     private String authorName;
 
+    public Author() {
+    }
+
     public Author(int authorId, String authorName) {
         this.authorId = authorId;
         this.authorName = authorName;
@@ -25,4 +28,7 @@ public class Author {
         this.authorName = authorName;
     }
     
+    public boolean checkAuthor(String author){
+       return true;
+    }
 }
