@@ -88,6 +88,7 @@ public class Book {
             }
             
         } catch (Exception e) {
+            System.out.println("invalid INput");
         }
 
     }
