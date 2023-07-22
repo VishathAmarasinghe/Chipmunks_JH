@@ -76,6 +76,10 @@ public class Book {
         
     }
     
+    public void viewAllBooks(){
+        
+    }
+    
     
     private boolean checkIsbn(int isbn){
         return false;

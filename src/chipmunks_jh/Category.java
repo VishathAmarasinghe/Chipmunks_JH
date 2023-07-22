@@ -10,9 +10,9 @@ public class Category extends Book{
         this.categoryName = categoryName;
     }
 
+
     public Category() {
     }
-    
 
     public Category(int categoryID, String categoryName) {
         this.categoryID = categoryID;
@@ -24,8 +24,10 @@ public class Category extends Book{
         System.out.println("Category name: "+categoryName);
     }
     
+
     public boolean checkCategory(String Category){
         return true;
     }
     
+
 }
