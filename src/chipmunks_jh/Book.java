@@ -46,13 +46,14 @@ public class Book {
         System.out.println("Enter the ISBN");
         Scanner scan=new  Scanner(System.in);
         try {
-            int isbn=scan.nextInt();
-            if (checkIsbn(isbn)) {
-                String title=scan.nextLine();
+            setISBN(scan.nextInt());
+            if (checkIsbn(getISBN())) {
                 System.out.println("Enter Title");
-                String category=scan.nextLine();
+                setTitle(scan.nextLine());
                 Category c1=new Category();
-                if (c1.checkCategory(category)) {
+                c1.setCategoryName(scan.nextLine());
+                
+                if (c1.checkCategory(c1.getCategoryName())) {
                     
                 }else{
                     System.out.println("current Category is not in the category list");
@@ -97,18 +98,20 @@ public class Book {
         System.out.println("Enter the ISBN");
         Scanner scan=new  Scanner(System.in);
         try {
-            int isbn=scan.nextInt();
-            if (checkIsbn(isbn)) {
+            setISBN(scan.nextInt());
+            if (checkIsbn(getISBN())) {
                 System.out.println("Update a book");
                 System.out.println("Update a new Title");
-                String newTitle=scan.nextLine();
+                setTitle(scan.nextLine());
                 System.out.println("Enter  new Category");
-                String category=scan.nextLine();
                 Category c1=new Category();
-                if (c1.checkCategory(category)) {
+                c1.setCategoryName(scan.nextLine());
+                
+                if (c1.checkCategory(c1.getCategoryName())) {
                     System.out.println("Enter new Author");
-                    String newautor=scan.nextLine();
+                    
                     Author a1=new Author();
+                    String newautor=scan.nextLine();
                     if (a1.checkAuthor(newautor)) {
                         //update functionality
                     }else{
