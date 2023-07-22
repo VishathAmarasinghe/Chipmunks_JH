@@ -1,6 +1,5 @@
 package chipmunks_jh;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class Reservation {
@@ -23,6 +22,7 @@ public class Reservation {
             
             }
         } catch (Exception e) {
+            System.out.println("Error fetching details...");
         }
     }
 
@@ -42,6 +42,7 @@ public class Reservation {
             
             }
         } catch (Exception e) {
+            System.out.println("Error fetching details...");
         }
     }
 
