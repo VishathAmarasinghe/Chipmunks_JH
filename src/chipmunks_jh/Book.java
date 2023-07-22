@@ -68,7 +68,34 @@ public class Book {
     
     
     public void removeBook(){
-        
+        System.out.println("Remove book a Book");
+        System.out.println("Enter the ISBN");
+        Scanner scan=new  Scanner(System.in);
+        try {
+            int isbn=scan.nextInt();
+            if (checkIsbn(isbn)) {
+                if (checkBookInReservation(isbn)) {
+                    
+                }else{
+                    System.out.println("Areu sure you want to delete(Y/N)");
+                    String values= scan.nextLine();
+                    try {
+                        if (values=="y") {
+                            
+                        }else{
+                            System.out.println("invalid");
+                        }
+                    } catch (Exception e) {
+                    }
+                  
+                }
+
+            }else{
+                System.out.println("ISBN is already exisits");
+            }
+        } catch (Exception e) {
+        }
+
     }
    
     
@@ -84,6 +111,10 @@ public class Book {
     private boolean checkIsbn(int isbn){
         return false;
         
+    }
+    
+    private boolean checkBookInReservation(int ISBM){
+        return true;
     }
     
     
