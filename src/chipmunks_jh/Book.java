@@ -128,8 +128,13 @@ public class Book {
         }
     }
     
-    public void viewAllBooks(){
-        
+    public void ListAllBooks(){
+        System.out.println("List all available Books");
+        if(checkBookList()){
+            
+        }else{
+            System.out.println("There are no books available to be listed!");
+        }
     }
     
     
@@ -173,7 +178,10 @@ public class Book {
         return true;
     }
     
-    
+    //Check if book list exists (true if at least 1 record is available)
+    private boolean checkBookList(){
+        return true;
+    }
    
     
     
