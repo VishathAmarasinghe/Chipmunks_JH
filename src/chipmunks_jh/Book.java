@@ -57,13 +57,14 @@ public class Book {
                     c1.setCategoryName(scan.nextLine());
                     if (!v1.checkStringvalidation(c1.getCategoryName())) {
                         c1.setCategoryName("");
-                    }
-
-                    if (c1.checkCategory(c1.getCategoryName())) {
-
                     } else {
-                        System.out.println("current Category is not in the category list");
+                        if (c1.checkCategory(c1.getCategoryName())) {
+
+                        } else {
+                            System.out.println("current Category is not in the category list");
+                        }
                     }
+
                 }
 
             } else {
