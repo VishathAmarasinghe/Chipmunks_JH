@@ -41,7 +41,15 @@ public class Category extends Book {
     }
 
     public boolean checkCategory(String Category) {
-        return true;
+        DatabaseConnection d1=new DatabaseConnection();
+        int value=d1.FindCategory(Category);
+        if (value==0) {
+            return false;
+        }else{
+            return true;
+        }
+        
+        
     }
 
 }

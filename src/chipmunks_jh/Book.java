@@ -59,12 +59,13 @@ public class Book {
                         c1.setCategoryName("");
                     } else {
                         if (c1.checkCategory(c1.getCategoryName())) {
+                            DatabaseConnection d1=new DatabaseConnection();
+                            d1.InsertBook(String.valueOf(getISBN()), getTitle(),c1.getCategoryName());
 
                         } else {
                             System.out.println("current Category is not in the category list");
                         }
                     }
-
                 }
 
             } else {
@@ -120,6 +121,8 @@ public class Book {
                     String newautor = scan.nextLine();
                     if (a1.checkAuthor(newautor)) {
                         //update functionality
+                        DatabaseConnection d2=new DatabaseConnection();
+                        d2.UpdatetBook(String.valueOf(getISBN()), getTitle(), c1.getCategoryName());
                     } else {
                         System.out.println("author is not available in the database");
                     }
